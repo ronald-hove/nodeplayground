@@ -10,10 +10,10 @@ async function generateCompanyCode(companyName) {
     .sort((a, b) => {
       // sort by company code numbers in DSC order
       // extract the company code numbers only
-      const first = (a.Code).split('').filter((element) => !isNaN(parseInt(element))).join('')
+      const last = (a.Code).split('').filter((element) => !isNaN(parseInt(element))).join('')
       const next = (b.Code).split('').filter((element) => !isNaN(parseInt(element))).join('')
       // do sort on company code numbers criteria
-      return parseInt(next, 10) - parseInt(first, 10);
+      return parseInt(next, 10) - parseInt(last, 10);
     })
 
   console.log('Filtered Companies', filteredCompanies)
